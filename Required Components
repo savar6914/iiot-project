@@ -1,0 +1,34 @@
+SOFTWARE
+1.Arduino IDE (for development, can be replaced by Wokwi's built-in IDE)
+
+2.Wokwi Simulator (https://wokwi.com/)
+
+3.GitHub (for code versioning and project documentation)
+
+4.draw.io / Lucidchart (for flowchart creation)
+
+5.Screen recording software (OBS Studio, Xbox Recorder) for demo video
+
+
+
+HARDWARE
+1.Arduino Uno
+
+2.DS3231 or DS1307 Real-Time Clock (RTC) module
+
+3.DHT11 / DS18B20 / LM35 Temperature sensor (Tell me your choice)
+
+4.16x2 LCD (optional, or use Serial Monitor)
+
+5.Breadboard and connecting wires (virtual in Wokwi)
+
+
+
+Optional Cloud Environment for Future Expansion
+
+1.ThingSpeak / Blynk / MQTT Broker for remote monitoring
+
+2.Cloud dashboard (AWS IoT, Azure IoT, or Google Cloud IoT Core)
+
+
+
