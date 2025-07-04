@@ -1,0 +1,10 @@
+Industrial and domestic environments require constant temperature monitoring to prevent overheating of sensitive equipment. Manual monitoring is inefficient and error-prone. This project aims to automate this process by:
+
+1.Continuously measuring the temperature in real-time.
+
+2.Displaying the current time and temperature.
+
+3.Generating a warning message when the temperature crosses a critical threshold.
+
+4.Simulating the system virtually to reduce development cost and time.
+
