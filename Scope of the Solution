@@ -1,0 +1,13 @@
+1.Real-time temperature and clock monitoring using sensors and an RTC module.
+
+2.Simulation of the system using Wokwi, enabling virtual prototyping without physical components.
+
+3.Modular code that can be expanded to support:
+
+4.Cloud data transmission (e.g., to ThingSpeak, Blynk).
+
+5.Remote alerts using IoT platforms.
+
+6.Physical hardware implementation.
+
+7.Can be used in smart factories, homes, and server rooms for environmental monitoring.
