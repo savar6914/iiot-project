@@ -24,6 +24,10 @@ HARDWARE
 
 6. Add a Buzzer beep every 1 second during the over-temperature condition.
 
+7. LED color red
+
+
+
 Optional Cloud Environment for Future Expansion
 
 1.ThingSpeak / Blynk / MQTT Broker for remote monitoring
