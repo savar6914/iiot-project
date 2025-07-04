@@ -16,13 +16,13 @@ HARDWARE
 
 2.DS3231 or DS1307 Real-Time Clock (RTC) module
 
-3.DHT11 / DS18B20 / LM35 Temperature sensor (Tell me your choice)
+3.DHT11 / DS18B20 / LM35 Temperature sensor 
 
 4.16x2 LCD (optional, or use Serial Monitor)
 
 5.Breadboard and connecting wires (virtual in Wokwi)
 
-
+6. Add a Buzzer beep every 1 second during the over-temperature condition.
 
 Optional Cloud Environment for Future Expansion
 
