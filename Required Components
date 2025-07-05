@@ -12,7 +12,7 @@ SOFTWARE
 
 
 HARDWARE
-1.Arduino Uno
+1.Arduino Uno OR ESP 32 
 
 2.DS3231 or DS1307 Real-Time Clock (RTC) module
 
