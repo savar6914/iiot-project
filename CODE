@@ -1,0 +1,66 @@
+// ========================= Libraries =========================
+#include <Wire.h>                  // I2C communication
+#include <RTClib.h>                // DS1307 RTC library
+#include <OneWire.h>               // 1-Wire library for DS18B20
+#include <DallasTemperature.h>     // DS18B20 temperature library
+
+// ========================= Pin Definitions =========================
+#define ONE_WIRE_BUS 15    // DS18B20 data pin connected to GPIO15
+#define LED_PIN 2          // LED connected to GPIO2 (can use onboard LED)
+
+// ========================= Object Initialization =========================
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire); // DS18B20 sensor
+RTC_DS1307 rtc;                      // DS1307 RTC
+
+const float TEMP_THRESHOLD = 30.0;   // Temperature limit for alert (°C)
+
+// ========================= Setup Function =========================
+void setup() {
+  Serial.begin(115200);
+  
+  sensors.begin();      // Initialize DS18B20
+  Wire.begin();         // Start I2C
+  pinMode(LED_PIN, OUTPUT);
+
+  // Initialize RTC
+  if (!rtc.begin()) {
+    Serial.println("Couldn't find RTC. Check wiring!");
+    while (1); // Stop program if RTC is not found
+  }
+
+  // Uncomment below to set RTC time to compile time (only needed once)
+  // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+
+  Serial.println("System Ready");
+}
+
+// ========================= Loop Function =========================
+void loop() {
+  // 1. Read time from RTC
+  DateTime now = rtc.now();
+
+  // 2. Read temperature from DS18B20
+  sensors.requestTemperatures();         
+  float tempC = sensors.getTempCByIndex(0); 
+
+  // 3. Error check
+  if (tempC == DEVICE_DISCONNECTED_C) {
+    Serial.println("Error: DS18B20 not connected!");
+    delay(2000);
+    return;
+  }
+
+  // 4. Print time & temperature to Serial
+  Serial.printf("Time: %02d:%02d:%02d | Temp: %.2f C\n", now.hour(), now.minute(), now.second(), tempC);
+
+  // 5. Temperature threshold check
+  if (tempC >= TEMP_THRESHOLD) {
+    Serial.println("WARNING: High Temperature!");
+    digitalWrite(LED_PIN, HIGH);  // Turn ON LED
+  } else {
+    digitalWrite(LED_PIN, LOW);   // Turn OFF LED
+  }
+
+  delay(1000); // Wait 1 second before next reading
+}
